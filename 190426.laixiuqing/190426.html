@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//、编写一个函数，有两个参数，实现将参数的值转换为对象属性的值
+			//例：f(1,2)===>返回{x:1,y:2}
+			function sum(a,b){
+				var text={ x:a,y:b };
+				return text;
+			}
+			console.log(sum(1,2));
+			//编写函数实现两个数的四则运算
+			var per = {
+				add: function(z, x) {
+					return z + x;
+				},
+				sbb: function(z, x) {
+					return z - x;
+				},
+				multi: function(z, x) {
+					return z * x;
+				},
+				div: function(z, x) {
+					return z / x;
+				},
+			}
+			console.log(per.add(10, 20));
+			console.log(per.sbb(10, 20));
+			console.log(per.multi(10, 20));
+			console.log(per.div(10, 20));
+		</script>
+	</body>
+</html>
