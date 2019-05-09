@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.img {
+			width: 780px;
+			height:4200px;
+			margin: 0 auto;
+			position: absolute;
+			top: 0;
+		}
+	</style>
+
+	<body>
+		<div>
+			<div class="img">
+				<img src="img/详情页.jpg" />
+			</div>
+		</div>
+		<script type="text/javascript">
+			var img = document.querySelector('.img');
+			var gunH =0;
+			setInterval(function(){
+				gunH+=5;
+				img.style.top=-gunH+'px';
+				if(gunH>4200){
+					gunH-=5;
+					img.style.top=-gunH+'px';
+				}
+				},10);
+		</script>
+	</body>
+</html>
