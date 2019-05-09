@@ -1,0 +1,98 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#box{
+			width: 600px;
+			height: 600px;
+			margin: 60px auto;
+			background: url(img/QQ图片20190509154137.jpg) no-repeat;
+			position: relative;
+		}
+		#hour,#minute,#second{
+			width: 30px;
+			height: 600px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -300px;
+			margin-left: -15px;
+		}
+		#hour{
+			background: url(img/QQ图片20190509154145.png) no-repeat;
+		}
+		#minute{
+			background: url(img/QQ图片20190509154151.png) no-repeat;
+		}
+		#second{
+			background: url(img/QQ图片20190509154155.png) no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<div id='hour'></div>
+		<div id='minute'></div>
+		<div id='second'></div>
+	</div>
+		<script type="text/javascript">
+			window.onload=function(){
+			function byId(id){
+				return typeof(id)==='string'?document.getElementById(id):null;
+			}
+			var h=byId('hour');
+			var m=byId('minute');
+			var s=byId('second');
+			setInterval(function(){
+				var date=new Date();
+				var mills=date.getMilliseconds();
+				var second=date.getSeconds()+mills/1000;
+				var minitue=date.getMinutes()+second/60;
+				var hour=date.getHours()%12+minitue/60;
+
+				h.style.transform='rotate('+hour*30+'deg)';
+				m.style.transform='rotate('+minitue*6+'deg)';
+				s.style.transform='rotate('+second*6+'deg)'
+
+			},10)
+			
+		}
+		</script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='box1'>	
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById('box1');
+		var time1= new Date("2019/5/15 00:00:00");
+		function A(){
+			var time2=new Date();
+			var time3=(time1.getTime()-time2.getTime())/1000;
+			var d=Math.floor(time3/3600/24);
+			var h=Math.floor(time3/3600%24);
+			var m=Math.floor(time3/60%60);
+			var s=Math.floor(time3%60);
+			d<10?d='0'+d:d;
+			h<10?h='0'+h:h;
+			m<10?m='0'+m:m;
+			s<10?s='0'+s:s;
+			box.innerHTML='剩余时间是: '+d+'天 '+h+'小时 '+m+'分钟 '+s+'秒';
+		}
+		var timer=setInterval(A,1000);
+	</script>
+</html>
+
