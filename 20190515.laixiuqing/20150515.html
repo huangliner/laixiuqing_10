@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css" >
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#ul{
+				margin: 0 auto;
+				margin-top: 200px;
+				width: 500px;
+				height: 200px;
+				border: 1px solid gray;
+			}
+			#ul li{
+				list-style: none;
+				display: block;
+				float: left;
+				width: 100px;
+				height: 30px;	
+				text-align: center;
+				line-height: 30px;
+				background-color: gainsboro;
+			}
+			#ul li:hover{
+				background-color:white;
+			}
+			#ul li a{
+				text-decoration: none;
+				color: black;
+			}
+			div{
+				position: absolute;
+				top: 230px;
+				width: 500px;
+				height: 170px;
+				display: none;
+			}
+			div p{
+				width: 250px;
+				height: 85px;
+				float: left;
+				text-align: center;
+				line-height: 85px;
+			}
+			.fdiv{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul">
+			<li class="color"><a href="#">公告</a></li>
+			<li><a href="#">规则</a></li>
+			<li><a href="#">论坛</a></li>
+			<li><a href="#">安全</a></li>
+			<li><a href="#">公益</a></li>
+			<div class="fdiv">
+				<p>数据七夕:金牛爱送玫瑰</p>
+				<p>10万家店60万新品</p>
+				<p>阿里打造"互联网监管"</p>
+				<p>全球品大网上时装周</p>
+			</div>
+			<div>
+				<p>"全额返现"要管控啦</p>
+				<p>炒信规则调整意见反馈</p>
+				<p>淘宝新规发布汇总((7月)</p>
+				<p>质量相关规则近期变更</p>
+			</div>
+			<div>
+				<p>接次文件，毁了一家店</p>
+				<p>新版阿里110上线了</p>
+				<p>联号安全神器阿里钱盾</p>
+				<p>卖家学违禁通免被处罚</p>
+			</div>
+			<div>
+				<p>数据七夕:金牛爱送玫瑰</p>
+				<p>10万家店60万新品</p>
+				<p>阿里打造"互联网监管"</p>
+				<p>全球品大网上时装周</p>
+			</div>
+			<div>
+				<p>"全额返现"要管控啦</p>
+				<p>炒信规则调整意见反馈</p>
+				<p>淘宝新规发布汇总((7月)</p>
+				<p>质量相关规则近期变更</p>
+			</div>
+		</ul>
+		<script>
+			var tabs=document.getElementsByTagName("li");
+			var divs=document.getElementsByTagName("div");
+			 
+			for(var i=0;i<tabs.length;i++){
+			 tabs[i].onclick=function(){change(this);}
+			}
+			 
+			function change(obj){
+				for(var i=0;i<tabs.length;i++){
+				 if(tabs[i]==obj){
+				 	divs[i].className="fdiv";
+				}else{
+				 	divs[i].className="";
+				 	}
+				 }
+			} 
+		</script>
+	</body>
+</html>
