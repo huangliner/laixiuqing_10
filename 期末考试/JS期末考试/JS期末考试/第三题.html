@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+		<style type="text/css">
+			#imgmove{
+				width: 500px;
+				height: 360px;
+				overflow: hidden;
+				position: relative;
+			}
+			#imgmove img{
+				position: absolute;
+				left: 0;
+			}
+		</style>
+	<body>
+		<div id="imgmove">
+			<img id="pic" src="img/pic.jpg" >
+		</div>
+		<script type="text/javascript">
+			var imgmove=document.getElementById('imgmove');
+			var pic=document.getElementById('pic');
+			var gunH=0,a=-1;
+			var timer2=setInterval(function(){
+				gunH+=20*a;
+				console.log(gunH);
+				if(gunH<-1210){
+					a=1;
+				}else if(gunH>0){
+					a=-1;
+				}
+				pic.style.left=gunH+'px';
+			},200)
+		</script>
+	</body>
+</html>
